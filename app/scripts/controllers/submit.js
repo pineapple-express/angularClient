@@ -20,8 +20,14 @@ angular.module('softKittyApp')
 		return logEntry;
 	}
 
-	function getTagsFromText() {
+	function getTagsFromText(text) {
+		if (text === undefined) {
+			return [""];
+		}
+		var list = text.split(" ");
+		for (var s : list) {
 
+		}
 	}
 
  });
