@@ -1,12 +1,27 @@
 angular.module('softKittyApp')
   .controller('SubmitController', function ($scope, $http) {
-	$scope.happy = function() {
-		alert("I am happy");
+  	$scope.master = {};
+
+	$scope.happy = function(text) {
+		console.log("Happy", createLogEntry(text, "happy"));
 	} 	
 	$scope.meh = function() {
-		alert("I am meh");
+		console.log("Meh", createLogEntry(text, "meh"));
 	}
 	$scope.sad = function() {
-		alert("I am sad");
+		console.log("Sad", createLogEntry(text, "sad"));
 	}
- }
+
+	function createLogEntry(text, rating) {
+		var logEntry = {};
+		logEntry.message = text;
+		logEntry.rating = rating;
+		logEntry.tags = getTagsFromText(text);
+		return logEntry;
+	}
+
+	function getTagsFromText() {
+
+	}
+
+ });
