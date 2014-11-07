@@ -5,11 +5,12 @@
 		<div class="col-md-8">
 		
 			<!-- LOOP OVER THE ENTRIES IN $scope.logEntries -->
-			<div class"check-box" ng-repeat="logEntry in logEntries">
-				<blockquote>
+			<ul class"list-group" ng-repeat="logEntry in logEntries">
+				<li class="list-group-item">
+					<span class="badge">{{ logEntry.rating }} </span>
 					{{ logEntry.message }}
-				</blockquote>
-			</div>
+				</li>
+			</ul>
 
 		</div>
 	</div>
