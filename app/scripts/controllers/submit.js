@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('softKittyApp')
-  .controller('SubmitController', function ($scope, $http) {
+  .controller('SubmitController', function ($rootScope, $scope, $http, $location) {
   	$scope.master = '';
 
 	$scope.happy = function(text) {
@@ -42,6 +42,7 @@ angular.module('softKittyApp')
 		$http.post('http://localhost:8080/api/logEntry', angular.toJson(logEntry))
 			.success(function (data, status, headers, config) {
 				$scope.text = angular.copy($scope.master);
+				$rootScope.$broadcast('logEntryCreated')
 			})
 			.error(function(data, status, headers, config) {
 				console.log('Unable to post', data);
