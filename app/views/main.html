@@ -14,13 +14,13 @@
 		<div class="col-md-8" ng-repeat="logEntry in logEntries">
 				
 			<div class="panel panel-default">
+				<div class="panel-heading">
+					{{ logEntry.timestamp }}
+				</div>
 				<div class="panel-body">
 					<i class="fa fa-smile-o fa-2x"></i>
 					&nbsp
 					{{ logEntry.message }}
-				</div>
-				<div class="panel-footer">
-					{{ logEntry.timestamp }}
 				</div>
 			</div>
 
