@@ -1,11 +1,17 @@
+<div class="row-marketing">
+    <h4>Enter Log</h4>
+      <textarea>
+    </textarea>
+
+</div>
+
 <div class="row marketing">
 	<h4>Log Entries</h4>
-	
 	<div id="entry-list" class="row" ng-controller="ListController">
 		<div class="col-md-8">
 		
 			<!-- LOOP OVER THE ENTRIES IN $scope.logEntries -->
-			<div class"check-box" ng-repeat="logEntry in logEntries">
+			<div ng-repeat="logEntry in logEntries">
 				<blockquote>
 					{{ logEntry.message }}
 				</blockquote>
