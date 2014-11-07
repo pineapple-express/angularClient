@@ -18,7 +18,7 @@
 					{{ logEntry.timestamp | date: 'medium' }}
 				</div>
 				<div class="panel-body">
-					{{ logEntry.rating | face }}
+					<i class="{{ logEntry.rating | face }}"></i>
 					&nbsp
 					{{ logEntry.message }}
 				</div>
