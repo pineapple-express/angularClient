@@ -10,16 +10,19 @@
 </div>
 
 <div class="row marketing">
-	<h4>Log Entries</h4>
 	<div id="entry-list" class="row" ng-controller="ListController">
-		<div class="col-md-8">
-			<ul class"list-group" ng-repeat="logEntry in logEntries">
-				<li class="list-group-item">
-				<i class="fa fa-smile-o fa-2x"></i>
-				&nbsp
-				{{ logEntry.message }}
-				</li>
-			</ul>
+		<div class="col-md-8" ng-repeat="logEntry in logEntries">
+				
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<i class="fa fa-smile-o fa-2x"></i>
+					&nbsp
+					{{ logEntry.message }}
+				</div>
+				<div class="panel-footer">
+					{{ logEntry.timestamp }}
+				</div>
+			</div>
 
 		</div>
 	</div>
