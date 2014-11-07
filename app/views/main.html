@@ -2,11 +2,19 @@
     <h4>Enter Log</h4>
     <form novalidate>
       <textarea maxlegnth="140" ng-model="text"></textarea>
-      <br>
-      <button type="button" ng-click="happy(text)">Happy</button>
-      <button type="button" ng-click="meh(text)">Meh</button>
-      <button type="button" ng-click="sad(text)">Sad</button>
-    </form>
+	  <br>
+	  <div class="btn-group">
+		  <button type="button" class="btn btn-default" ng-click="happy(text)">
+			  <i class="fa fa-smile-o fa-2x"></i>
+		  </button>
+		  <button type="button" class="btn btn-default" ng-click="meh(text)">
+			  <i class="fa fa-meh-o fa-2x"></i>
+		  </button>
+		  <button type="button" class="btn btn-default" ng-click="sad(text)">
+			  <i class="fa fa-frown-o fa-2x"></i>
+		  </button>
+	  </div>
+	</form>
 </div>
 
 <div class="row marketing">
