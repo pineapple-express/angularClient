@@ -1,21 +1,24 @@
-<div class="row-marketing">
+<div class="row-marketing" ng-controller="=">
     <h4>Enter Log</h4>
-      <textarea>
-    </textarea>
-
+    <form novalidate>
+      <textarea maxlegnth="140" ng-model="text"></textarea>
+      <br>
+      <button type="button" class="btn btn-default" ng-click="happy()">Happy</button>
+      <button type="button" class="btn btn-default" ng-click="meh()">Meh</button>
+      <button type="button" class="btn btn-default" ng-click="sad()">Sad</button>
+    </form>
 </div>
 
 <div class="row marketing">
 	<h4>Log Entries</h4>
 	<div id="entry-list" class="row" ng-controller="ListController">
 		<div class="col-md-8">
-		
-			<!-- LOOP OVER THE ENTRIES IN $scope.logEntries -->
-			<div ng-repeat="logEntry in logEntries">
-				<blockquote>
+			<ul class"list-group" ng-repeat="logEntry in logEntries">
+				<li class="list-group-item">
+					<span class="badge">{{ logEntry.rating }} </span>
 					{{ logEntry.message }}
-				</blockquote>
-			</div>
+				</li>
+			</ul>
 
 		</div>
 	</div>
