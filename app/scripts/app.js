@@ -16,16 +16,13 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-	'filters'
+    'mentio',
+	  'filters'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
       })
       .otherwise({
         redirectTo: '/'
