@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('softKittyApp')
-  .controller('SubmitController', function ($rootScope, $scope, $http, $location) {
+  .controller('SubmitController', function ($rootScope, $scope, $http, $q) {
   	$scope.master = '';
 
 	$scope.happy = function(text) {
@@ -50,5 +50,21 @@ angular.module('softKittyApp')
 				console.log('headers', headers);
 			});
 	}
+
+	$scope.getTags = function (term) {
+		var matches = [];
+
+		return $http.get('http://localhost:8080/api/tags').
+			then(function(response) {
+			angular.forEach(response.data, function(item) {
+				if(item.label.toUpperCase().indexOf(term.toUpperCase()) >= 0) {
+					matches.push(item);
+				}
+			})
+
+			$scope.tags = matches;
+			return $q.when(matches);
+		});
+  	};
 
  });
