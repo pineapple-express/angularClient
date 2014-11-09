@@ -2,22 +2,32 @@
 	<div id="entry-submit" class="row" ng-controller="SubmitController">
 		<div class="col-md-8">
 			<form novalidate>
-		  		<textarea class="form-control" rows="3" placeholder="What did you do today?" maxlegnth="140" ng-model="text"></textarea>
-		  		<div class="btn-group">
-			  		<button type="button" class="btn btn-default" ng-click="happy(text)">
-				  		<i class="fa fa-smile-o fa-2x"></i>
-			  		</button>
-			  		<button type="button" class="btn btn-default" ng-click="meh(text)">
-				  		<i class="fa fa-meh-o fa-2x"></i>
-			  		</button>
-			  		<button type="button" class="btn btn-default" ng-click="sad(text)">
-				  		<i class="fa fa-frown-o fa-2x"></i>
-			  		</button>
-		  		</div>
+        <div ng-controller="TagController">
+            <textarea
+                 ng-model="text"
+                 mentio mentio-typed-text="typedTerm" 
+                 mentio-search="getTags(term)"
+                 mentio-items="tags"
+                 class="form-control" 
+                 mentio-trigger-char="'#'"
+                 placeholder="What did you just do?" maxlegnth="140"></textarea>
+  
+  		  		<div class="btn-group">
+  			  		<button type="button" class="btn btn-default" ng-click="happy(text)">
+  				  		<i class="fa fa-smile-o fa-2x"></i>
+  			  		</button>
+  			  		<button type="button" class="btn btn-default" ng-click="meh(text)">
+  				  		<i class="fa fa-meh-o fa-2x"></i>
+  			  		</button>
+  			  		<button type="button" class="btn btn-default" ng-click="sad(text)">
+  				  		<i class="fa fa-frown-o fa-2x"></i>
+  			  		</button>
+  		  		</div>
 	  		</form>
   		</div>
 	</div>
 </div>
+
 
 <div class="row marketing">
 	<div id="entry-list" class="row" ng-controller="ListController">
@@ -35,3 +45,5 @@
 		</div>
 	</div>
 </div>
+
+
